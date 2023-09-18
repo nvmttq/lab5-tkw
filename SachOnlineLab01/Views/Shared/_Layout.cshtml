@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("SachOnline", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("TRANG CHỦ", "Index", "Home")</li>
+                    <li>@Html.ActionLink("GIỚI THIỆU", "About", "Home")</li>
+                    <li>@Html.ActionLink("LIÊN HỆ", "Contact", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer">
+                            SÁCH THEO CHỦ ĐỀ
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
+                            <li><a role="menuitem" href="#">Action</a></li>
+
+                            <li><a role="menuitem" href="#">Another action</a></li>
+                            <li><a role="menuitem" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <img src="~/Images/Images/Slider.jpg">
+
+    <article class="container body-content" style="display: flex;">
+
+        <aside id="left">
+            <div id="menu">
+                @Html.Action("ChuDePartial", "Home")
+                @Html.Action("NhaXuatBanPartial", "Home")
+            </div>
+
+        </aside>
+
+        <section>
+            @RenderSection("FillterName")
+            @RenderBody()
+        </section>
+
+        <aside id="right">
+            <div id="sachbannhieu">
+                <p>SÁCH BÁN CHẠY</p>
+                <marquee direction="up" scrollamuont="3" scrolldelay="100" onMouseMove="stop()" onMouseOut="start()">
+                    <p><a href="#"><img src="~/Images/Images/Sach/TH008.jpg">Thủ Thuật Lập Trình Visual Basic 6</a></p>
+                    <p><a href="#"><img src="~/Images/Images/Sach/TH005.jpg">Hướng dẫn tự học Photoshop CS(Photoshop 6.0)</a></p>
+                    <p><a href="#"><img src="~/Images/Images/Sach/TH002.jpg">Căn Bản Về Photoshop CS Tinh Chỉnh Và Xử Lý Màu</a></p>
+                    <p><a href="#"><img src="~/Images/Images/Sach/THCB.jpg">Tin học Cơ bản</a></p>
+                </marquee>
+            </div>
+            <div id="lienketwbsite">
+                <p>LIÊN KẾT WEBSITE</p>
+                <select onchange="window.open(this.options[this.selectedIndex].value)">
+                    <option selected>-------- Tin Tuc --------</option>
+                    <option value="http://www.tdmu.edu.vn">ĐH Thủ Dầu Một</option>
+                    <option value="http://iteee.tdmu.edu.vn">Khoa CNTT</option>
+                </select>
+            </div>
+            <div id="soluottruycap">
+                <p>THỐNG KÊ TRUY CẬP</p>
+                <h4>Tổng truy cập: 160</h4>
+                <h4>Đang online: 3</h4>
+            </div>
+        </aside>
+    </article>
+    <hr />
+        @RenderSection("SachBanNhieu", required: false)
+    <footer>
+
+        @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
+        <p>©2016 - Nhà sách ABC . Allright Reserved</p>
+        <p>Website được phát triển để sử dụng làm bài tập thực hành môn Thiết kế và Lập trình Web</p>
+        <p>Email: abc.thudaumotuniversity@gmail.com</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
