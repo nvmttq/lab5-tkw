@@ -1,112 +1,68 @@
 ﻿
+@model IEnumerable<SachOnlineLab01.Models.SACH>
 
+@{
+    ViewBag.Title = "TRANG CHỦ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-<div class="cards container-book row text-center">
+<style type="text/css">
+    .imgbook {
+        transition: all 1s ease-in;
+        width: 400px;
+    }
 
-    <div class="card col-sm-4 col-md-4">
+        .imgbook:hover {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+</style>
 
-        <div class="thumbnail card-img">
-            <img class="" src="~/Images/Images/Sach/KT0002.jpg" alt="TH005" style="width: 100%; height: 200px;">
-        </div>
-
-        <div class="caption card-content">
-            <div class="card-top">
-                <h3 class="card-title">Lap Trinh 24h</h3>
-                <p class="card-desc">ABCDEFGHJKF</p>
+<h2 class="text-center">SÁCH MỚI</h2>
+<hr>
+<div class="row text-center">
+    @foreach (var sach in Model)
+    {
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+            <div class="thumbnail">
+                <img src="~/Images/@sach.AnhBia" alt="Thumbnail Image 1" class="img- responsive img-rounded imgbook" style="width:400px;">
+                <div class="caption">
+                    <h4 style="min-height: 70px;">
+                        <a href="@Url.Action("BookDetail","Home", new { id = sach.MaSach})">@sach.TenSach</a>
+                    </h4>
+                    <p>
+                        <a href="#" class="btn btn-primary" role="button">
+                            <span class="glyphicon glyphicon-shopping-cart" aria- hidden="true"></span> Add to Cart
+                        </a>
+                    </p>
+                </div>
             </div>
-            <div class="card-bottom">
-                @Html.ActionLink("XEM CHI TIẾT", "Details", "Sach", new { id = 12 }, new { @class = "btn btn-primary" })
-
-                @*<a href="Chitietsanpham.html" class="btn btn-primary" role="button"> XEM CHI TIẾT</a>*@
-            </div>
-
         </div>
-
-    </div>
-    <div class="card col-sm-4 col-md-4">
-
-        <div class="thumbnail card-img">
-            <img class="" src="~/Images/Images/Sach/KT0002.jpg" alt="TH005" style="width: 100%; height: 200px;">
-        </div>
-
-        <div class="caption card-content">
-            <div class="card-top">
-                <h3 class="card-title">Lap Trinh 24h</h3>
-                <p class="card-desc">ABCDEFGHJKF</p>
-            </div>
-            <div class="card-bottom">
-                @Html.ActionLink("XEM CHI TIẾT", "Details", "Sach", new { id = 12 }, new { @class = "btn btn-primary" })
-
-                @*<a href="Chitietsanpham.html" class="btn btn-primary" role="button"> XEM CHI TIẾT</a>*@
-            </div>
-
-        </div>
-
-    </div>
-    <div class="card col-sm-4 col-md-4">
-
-        <div class="thumbnail card-img">
-            <img class="" src="~/Images/Images/Sach/KT0002.jpg" alt="TH005" style="width: 100%; height: 200px;">
-        </div>
-
-        <div class="caption card-content">
-            <div class="card-top">
-                <h3 class="card-title">Lap Trinh 24h</h3>
-                <p class="card-desc">ABCDEFGHJKF</p>
-            </div>
-            <div class="card-bottom">
-                @Html.ActionLink("XEM CHI TIẾT", "Details", "Sach", new { id = 12 }, new { @class = "btn btn-primary" })
-
-                @*<a href="Chitietsanpham.html" class="btn btn-primary" role="button"> XEM CHI TIẾT</a>*@
-            </div>
-
-        </div>
-
-    </div>
-    <div class="card col-sm-4 col-md-4">
-
-        <div class="thumbnail card-img">
-            <img class="" src="~/Images/Images/Sach/KT0002.jpg" alt="TH005" style="width: 100%; height: 200px;">
-        </div>
-
-        <div class="caption card-content">
-            <div class="card-top">
-                <h3 class="card-title">Lap Trinh 24h</h3>
-                <p class="card-desc">ABCDEFGHJKF</p>
-            </div>
-            <div class="card-bottom">
-                @Html.ActionLink("XEM CHI TIẾT", "Details", "Sach", new { id = 12 }, new { @class = "btn btn-primary" })
-
-                @*<a href="Chitietsanpham.html" class="btn btn-primary" role="button"> XEM CHI TIẾT</a>*@
-            </div>
-
-        </div>
-
-    </div>
-
+    }
 </div>
 <nav class="text-center">
+    <!-- Add class .pagination-lg for larger blocks or .pagination-sm for smaller blocks-->
     <ul class="pagination">
-        <li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li>
+            <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
         <li class="active"><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li class="disabled"><a href="#">5</a></li>
-        <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
     </ul>
 </nav>
 
 
-
-
-
-
-
-
-@section FillterName {
-    <p>Sách Mới</p>
-}
 @section SachBanNhieu {
     @Html.Action("SachBanNhieuPartial", "Home");
 }
+

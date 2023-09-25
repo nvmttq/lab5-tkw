@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -121,8 +129,51 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SACHesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADMIN.cs">
+      <DependentUpon>SachOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHITIETDATHANG.cs">
+      <DependentUpon>SachOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHUDE.cs">
+      <DependentUpon>SachOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DONDATHANG.cs">
+      <DependentUpon>SachOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>SachOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHAXUATBAN.cs">
+      <DependentUpon>SachOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SACH.cs">
+      <DependentUpon>SachOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SachOnlineModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SachOnlineModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SachOnlineModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SachOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SachOnlineModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SachOnlineModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TACGIA.cs">
+      <DependentUpon>SachOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VIETSACH.cs">
+      <DependentUpon>SachOnlineModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -131,71 +182,54 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\StyleHome.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\Images\bg_menu_top.jpg" />
-    <Content Include="Images\Images\Cancel.jpg" />
-    <Content Include="Images\Images\Chonmua.png" />
-    <Content Include="Images\Images\Chot.jpg" />
-    <Content Include="Images\Images\dangnhap.jpg" />
-    <Content Include="Images\Images\Delete.jpg" />
-    <Content Include="Images\Images\Download.gif" />
-    <Content Include="Images\Images\Edit.png" />
-    <Content Include="Images\Images\Giohang.gif" />
-    <Content Include="Images\Images\heart.jpg" />
-    <Content Include="Images\Images\icon_list.jpg" />
-    <Content Include="Images\Images\LOGO.jpg" />
-    <Content Include="Images\Images\MISC26.ICO" />
-    <Content Include="Images\Images\MISC27.ICO" />
-    <Content Include="Images\Images\muitendo.gif" />
-    <Content Include="Images\Images\new.jpg" />
-    <Content Include="Images\Images\nut_chonmua.gif" />
-    <Content Include="Images\Images\Omo.gif" />
-    <Content Include="Images\Images\Sach\01.jpg" />
-    <Content Include="Images\Images\Sach\130318.jpg" />
-    <Content Include="Images\Images\Sach\130499.jpg" />
-    <Content Include="Images\Images\Sach\Autumn Leaves.jpg" />
-    <Content Include="Images\Images\Sach\echip.jpg" />
-    <Content Include="Images\Images\Sach\Gt_Thcb.jpg" />
-    <Content Include="Images\Images\Sach\Humpback Whale.jpg" />
-    <Content Include="Images\Images\Sach\Kt.jpg" />
-    <Content Include="Images\Images\Sach\KT0001.jpg" />
-    <Content Include="Images\Images\Sach\KT0002.jpg" />
-    <Content Include="Images\Images\Sach\KT0003.jpg" />
-    <Content Include="Images\Images\Sach\KT0004.jpg" />
-    <Content Include="Images\Images\Sach\KT0005.jpg" />
-    <Content Include="Images\Images\Sach\KT0006.jpg" />
-    <Content Include="Images\Images\Sach\KT0007.jpg" />
-    <Content Include="Images\Images\Sach\KT0008.jpg" />
-    <Content Include="Images\Images\Sach\KT0009.jpg" />
-    <Content Include="Images\Images\Sach\LTWeb2005.jpg" />
-    <Content Include="Images\Images\Sach\Me.jpg" />
-    <Content Include="Images\Images\Sach\Oracle.jpg" />
-    <Content Include="Images\Images\Sach\Oryx Antelope.jpg" />
-    <Content Include="Images\Images\Sach\P0001.jpg" />
-    <Content Include="Images\Images\Sach\P_0001.jpg" />
-    <Content Include="Images\Images\Sach\Sample.jpg" />
-    <Content Include="Images\Images\Sach\TH001.jpg" />
-    <Content Include="Images\Images\Sach\TH002.jpg" />
-    <Content Include="Images\Images\Sach\TH003.jpg" />
-    <Content Include="Images\Images\Sach\TH004.jpg" />
-    <Content Include="Images\Images\Sach\TH005.jpg" />
-    <Content Include="Images\Images\Sach\TH006.jpg" />
-    <Content Include="Images\Images\Sach\TH007.jpg" />
-    <Content Include="Images\Images\Sach\TH008.jpg" />
-    <Content Include="Images\Images\Sach\THCB.jpg" />
-    <Content Include="Images\Images\Sach\TiengAnh01.jpg" />
-    <Content Include="Images\Images\Save.jpg" />
-    <Content Include="Images\Images\Slider.jpg" />
-    <Content Include="Images\Images\Sotien.gif" />
-    <Content Include="Images\Images\tittle_sachmoi.gif" />
-    <Content Include="Images\Images\xehang.gif" />
+    <Content Include="Images\130318.jpg" />
+    <Content Include="Images\130499.jpg" />
+    <Content Include="Images\Gt_Thcb.jpg" />
+    <Content Include="Images\Kt.jpg" />
+    <Content Include="Images\KT0001.jpg" />
+    <Content Include="Images\KT0002.jpg" />
+    <Content Include="Images\KT0003.jpg" />
+    <Content Include="Images\KT0004.jpg" />
+    <Content Include="Images\KT0005.jpg" />
+    <Content Include="Images\KT0006.jpg" />
+    <Content Include="Images\KT0007.jpg" />
+    <Content Include="Images\KT0008.jpg" />
+    <Content Include="Images\KT0009.jpg" />
+    <Content Include="Images\Slider\01.jpg" />
+    <Content Include="Images\Slider\02.jpg" />
+    <Content Include="Images\Slider\03.jpg" />
+    <Content Include="Images\Slider\04.jpg" />
+    <Content Include="Images\Slider\05.jpg" />
+    <Content Include="Images\Slider\06.jpg" />
+    <Content Include="Images\TH004.jpg" />
+    <Content Include="Images\TH005.jpg" />
+    <Content Include="Images\TH006.jpg" />
+    <Content Include="Images\TH007.jpg" />
+    <Content Include="Images\TH008.jpg" />
+    <Content Include="Images\THCB.jpg" />
+    <Content Include="Models\SachOnlineModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SachOnlineModel.Context.cs</LastGenOutput>
+      <DependentUpon>SachOnlineModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\SachOnlineModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SachOnlineModel.edmx</DependentUpon>
+      <LastGenOutput>SachOnlineModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Images\Images\Sach\Thumbs.db" />
+    <EntityDeploy Include="Models\SachOnlineModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SachOnlineModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SachOnlineModel.edmx.diagram">
+      <DependentUpon>SachOnlineModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -224,10 +258,14 @@
     <Content Include="Views\Shared\NhaXuatBanPartial.cshtml" />
     <Content Include="Views\Shared\ChuDePartial.cshtml" />
     <Content Include="Views\Shared\SachBanNhieuPartial.cshtml" />
+    <Content Include="Views\SACHes\Create.cshtml" />
+    <Content Include="Views\SACHes\Delete.cshtml" />
+    <Content Include="Views\SACHes\Details.cshtml" />
+    <Content Include="Views\SACHes\Edit.cshtml" />
+    <Content Include="Views\SACHes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -241,6 +279,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
