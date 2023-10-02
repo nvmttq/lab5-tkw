@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KHACHHANGsController.cs" />
     <Compile Include="Controllers\SACHesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -260,9 +261,18 @@
     <Content Include="Views\Shared\SachBanNhieuPartial.cshtml" />
     <Content Include="Views\SACHes\Create.cshtml" />
     <Content Include="Views\SACHes\Delete.cshtml" />
-    <Content Include="Views\SACHes\Details.cshtml" />
+    <Content Include="Views\SACHes\ChiTietSach.cshtml" />
     <Content Include="Views\SACHes\Edit.cshtml" />
     <Content Include="Views\SACHes\Index.cshtml" />
+    <Content Include="Views\Home\SachTheoChuDe.cshtml" />
+    <Content Include="Views\Home\ChiTietSach.cshtml" />
+    <Content Include="Views\KHACHHANGs\Create.cshtml" />
+    <Content Include="Views\KHACHHANGs\Delete.cshtml" />
+    <Content Include="Views\KHACHHANGs\Details.cshtml" />
+    <Content Include="Views\KHACHHANGs\Edit.cshtml" />
+    <Content Include="Views\KHACHHANGs\Index.cshtml" />
+    <Content Include="Views\KHACHHANGs\DangKy.cshtml" />
+    <Content Include="Views\KHACHHANGs\DangNhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

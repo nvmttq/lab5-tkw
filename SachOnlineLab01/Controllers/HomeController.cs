@@ -48,5 +48,24 @@ namespace SachOnlineLab01.Controllers
         {
             return PartialView();
         }
+
+
+        public ActionResult SachTheoChuDe(int id)
+        {
+            var sach = from s in db.SACHes where s.MaCD == id select s;
+            return View(sach);
+        }
+
+        public ActionResult ChiTietSach(int id)
+        {
+            var sach = from s in db.SACHes where s.MaSach == id select s;
+            return View(sach.Single());
+        }
+
+        public ActionResult SachTheoNhaXuatBan(int id)
+        {
+            var sach = from s in db.SACHes where s.MaCD == id select s;
+            return View(sach);
+        }
     }
 }
