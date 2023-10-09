@@ -1,4 +1,8 @@
-﻿@model IEnumerable<SachOnlineLab01.Models.SACH>
+﻿@using SachOnlineLab01.Models;
+@using PagedList.Mvc;
+
+@model PagedList.PagedList<SACH>
+
 @{
     ViewBag.Title = "SachTheoChuDe";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -30,3 +34,16 @@
         </div>
     }
 </div>
+
+
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("SachTheoChuDe", new {id=ViewBag.MaCD, page=page}))
+</div>
+
+<style>
+    .MenuTrang {
+        display: inline;
+        text-align: center;
+    }
+</style>

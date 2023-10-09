@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SachOnlineLab01.Models;
+using PagedList;
+using PagedList.Mvc;
+
 
 namespace SachOnlineLab01.Controllers
 {
@@ -50,10 +53,16 @@ namespace SachOnlineLab01.Controllers
         }
 
 
-        public ActionResult SachTheoChuDe(int id)
+        public ActionResult SachTheoChuDe(int id, int? page)
         {
-            var sach = from s in db.SACHes where s.MaCD == id select s;
-            return View(sach);
+            int iSize = 3;
+            int iPagenum = (page ?? 1);
+            ViewBag.MaCD = id;
+            // add where s.MaCD == id
+            var sach = from s in db.SACHes
+                       select s;
+
+            return View(sach.OrderBy(s=>s.GiaBan).ToPagedList(iPagenum, iSize));
         }
 
         public ActionResult ChiTietSach(int id)
