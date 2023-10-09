@@ -64,7 +64,7 @@ namespace SachOnlineLab01.Controllers
 
         public ActionResult SachTheoNhaXuatBan(int id)
         {
-            var sach = from s in db.SACHes where s.MaCD == id select s;
+            var sach = from s in db.SACHes where s.MaNXB == id select s;
             return View(sach);
         }
     }
