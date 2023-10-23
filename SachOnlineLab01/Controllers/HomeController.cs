@@ -60,6 +60,7 @@ namespace SachOnlineLab01.Controllers
             ViewBag.MaCD = id;
             // add where s.MaCD == id
             var sach = from s in db.SACHes
+                       where s.MaCD == id
                        select s;
 
             return View(sach.OrderBy(s=>s.GiaBan).ToPagedList(iPagenum, iSize));
@@ -76,5 +77,13 @@ namespace SachOnlineLab01.Controllers
             var sach = from s in db.SACHes where s.MaNXB == id select s;
             return View(sach);
         }
+
+        public ActionResult LoginLogoutPartial()
+        {
+            return PartialView();
+        }
     }
+
+
+    
 }

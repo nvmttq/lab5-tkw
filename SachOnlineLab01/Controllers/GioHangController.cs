@@ -137,7 +137,7 @@ namespace SachOnlineLab01.Controllers
         {
             if(Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
             {
-                return RedirectToAction("DangNhap", "KHACHHANGs");
+                return Redirect("~/KHACHHANGs/DangNhap?id=2");
             }
 
             if(Session["GioHang"] == null)

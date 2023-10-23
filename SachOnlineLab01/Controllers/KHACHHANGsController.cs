@@ -212,6 +212,7 @@ namespace SachOnlineLab01.Controllers
 
         public ActionResult DangNhap(FormCollection collection)
         {
+            int state = int.Parse(Request.QueryString["id"]);
             var stenDN = collection["TenDN"];
 
             var sMatkhau = collection["Matkhau"];
@@ -233,8 +234,14 @@ namespace SachOnlineLab01.Controllers
 
                 if (kh != null)
                 {
-                    ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
                     Session["TaiKhoan"] = kh;
+                    if(state == 1)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    } else
+                    {
+                        return RedirectToAction("DatHang", "GioHang");
+                    }
                 }
                 else
                 {
