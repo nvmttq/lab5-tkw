@@ -13,6 +13,9 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="~/tinymce/js/tinymce/tinymce.min.js">
+    </script>
+    <script>tinymce.init({ selector: "textarea" });</script>
 </head>
 <body>
 
@@ -31,10 +34,10 @@
             <div class="collapse navbar-collapse" id="navAdmin">
                 <ul class="nav navbar-nav">
                     <li><a href="@Url.Action("Index", "Sach")">QUẢN LÝ SÁCH</a></li>
-                    <li><a href="@Url.Action("Index", "ChuDe")">QUẢN LÝ CHỦ ĐỀ</a></li>
-                    <li><a href="@Url.Action("Index", "NhaXuatBan")">QUẢN LÝ NHÀ XUẤT BẢN</a></li>
-                    <li><a href="@Url.Action("Index", "KhachHang")">QUẢN KHÁCH HÀNG</a></li>
-                    <li><a href="@Url.Action("Index", "DonHang")">QUẢN LÝ ĐƠN HÀNG</a></li>
+                    <li><a href="@Url.Action("Index", "CHUDEs")">QUẢN LÝ CHỦ ĐỀ</a></li>
+                    <li><a href="@Url.Action("Index", "NHAXUATBANs")">QUẢN LÝ NHÀ XUẤT BẢN</a></li>
+                    <li><a href="@Url.Action("Index", "KHACHHANGs")">QUẢN KHÁCH HÀNG</a></li>
+                    <li><a href="@Url.Action("Index", "DONDATHANGs")">QUẢN LÝ ĐƠN HÀNG</a></li>
                 </ul>
             </div>
         </div>

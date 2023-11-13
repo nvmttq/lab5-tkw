@@ -237,6 +237,7 @@ namespace SachOnlineLab01.Controllers
                     Session["TaiKhoan"] = kh;
                     if(state == 1)
                     {
+                      
                         return RedirectToAction("Index", "Home");
                     } else
                     {

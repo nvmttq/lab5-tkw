@@ -159,8 +159,8 @@ C:\Users\MINH\Desktop\4YEARS\2023-2024\HK1\ThucHanhLTW\SachOnlineLab01\SachOnlin
 C:\Users\MINH\Desktop\4YEARS\2023-2024\HK1\ThucHanhLTW\SachOnlineLab01\SachOnlineLab01\bin\EntityFramework.SqlServer.dll
 C:\Users\MINH\Desktop\4YEARS\2023-2024\HK1\ThucHanhLTW\SachOnlineLab01\SachOnlineLab01\bin\EntityFramework.xml
 C:\Users\MINH\Desktop\4YEARS\2023-2024\HK1\ThucHanhLTW\SachOnlineLab01\SachOnlineLab01\bin\EntityFramework.SqlServer.xml
-C:\Users\MINH\Desktop\4YEARS\2023-2024\HK1\ThucHanhLTW\SachOnlineLab01\SachOnlineLab01\obj\Debug\SachOnlineLab01.csproj.AssemblyReference.cache
 C:\Users\MINH\Desktop\4YEARS\2023-2024\HK1\ThucHanhLTW\SachOnlineLab01\SachOnlineLab01\bin\PagedList.dll
 C:\Users\MINH\Desktop\4YEARS\2023-2024\HK1\ThucHanhLTW\SachOnlineLab01\SachOnlineLab01\bin\PagedList.Mvc.dll
 C:\Users\MINH\Desktop\4YEARS\2023-2024\HK1\ThucHanhLTW\SachOnlineLab01\SachOnlineLab01\bin\PagedList.xml
 C:\Users\MINH\Desktop\4YEARS\2023-2024\HK1\ThucHanhLTW\SachOnlineLab01\SachOnlineLab01\bin\PagedList.Mvc.xml
+C:\Users\MINH\Desktop\4YEARS\2023-2024\HK1\ThucHanhLTW\SachOnlineLab01\SachOnlineLab01\obj\Debug\SachOnlineLab01.csproj.AssemblyReference.cache
