@@ -37,5 +37,7 @@ namespace SachOnlineLab01.Models
         public virtual NHAXUATBAN NHAXUATBAN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VIETSACH> VIETSACHes { get; set; }
+
+        public int getItem { get; set; }
     }
 }
